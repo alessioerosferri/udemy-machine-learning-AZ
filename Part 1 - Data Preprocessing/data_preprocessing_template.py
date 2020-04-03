@@ -21,6 +21,8 @@ X[:, 1:] = imputer.transform(X[:, 1:])
 
 ct = ColumnTransformer([('encoder', OneHotEncoder(), [0])], remainder='passthrough')
 X = np.array(ct.fit_transform(X), dtype=np.float)
+labelEncoder_y = LabelEncoder()
+y = labelEncoder_y.fit_transform(y)
 
 
 
